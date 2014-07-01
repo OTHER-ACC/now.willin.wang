@@ -1038,6 +1038,28 @@ header h1 a:focus::after {
     transform: rotateX(10deg);
 }
 
+
+.inline li {
+    float: left;
+    position: relative;
+    margin:0 0 10px 10px;
+    line-height: 30px;
+}
+
+.tag-box a, .count-box {
+    padding: 4px 6px;
+    margin: 2px;
+    background: none repeat scroll 0% 0% #69f;
+    border-radius: 3px;
+    text-decoration: none;
+    border: 1px dashed #f06;
+}
+ul.decimal li{
+    list-style: decimal;
+    margin-left: 2.5em;
+    line-height: 1.2em;
+}
+
 #loading{
     position: fixed;
     width:40px;

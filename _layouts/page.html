@@ -21,10 +21,7 @@ layout: default
                     <img src="{{site.map_provider}}{{page.lng}},{{page.lat}}&markers={{page.lng}},{{page.lat}}">
                     {{ content }}
                 </section>
-                <section class="meta">
-                    {% if page.categories.size != 0 %}  城市:  {% for cat in page.categories %}<a href="/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>&nbsp;  {% endfor %} {% endif %}{% if page.tags.size != 0 %},  标签:  {% for tag in page.tags %}  <a href="/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>&nbsp;  {% endfor %} {% endif %}
 
-                </section>
             </article>
         </div>
     </li>
