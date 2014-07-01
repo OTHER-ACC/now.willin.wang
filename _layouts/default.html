@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>{{ page.title }}{% if page.title %} - {% endif %}{{ site.title }}</title>
+    <meta name="author" content="{{site.author}}">
+    <meta name="description" content="{{site.description}}">
+    <meta name="keywords" content="{% if page.categories.size != 0 %}{% for cat in page.categories %}{{ cat }},{% endfor %}{% endif %}{% if page.tags.size != 0 %}{% for tag in page.tags %}{{ tag }},{% endfor %}{% endif %}{{site.keywords}}">
+
+    <script type="text/javascript">
+        var _speedMark = new Date(),base_url="{{ site.url }}/",site_title = "{{ site.name }}",duoshuoQuery = {short_name:"{{ site.duoshuo }}"};
+    </script>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="shortcut icon" href="http://willin.wang/favicon.ico">
+    <link rel="apple-touch-icon" href="http://willin.wang/touch-icon-iphone-precomposed.png">
+    <link rel="apple-touch-icon" sizes="76x76"   href="http://willin.wang/touch-icon-ipad-precomposed.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://willin.wang/touch-icon-iphone-retina-precomposed.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://willin.wang/touch-icon-ipad-retina-precomposed.png">
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=35280207" charset="UTF-8"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
+    <script type="application/x-javascript" src="/static/default.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h2>{{site.description}}</h2>
+        <h1><a href="/">{{ site.title }}</a></h1>
+        <h2 class="bottom">
+            <span class="hide">与你相距 <span class="geolocation" data-lat="{{site.last_lat}}" data-lng="{{site.last_lng}}">??</span>. </span>
+            不管还要多久，最后我会在你身边。
+        </h2>
+    </header>
+    <main id="main">
+        <div id="content">
+           {{content}}
+        </div>
+        <aside id="sidebar">
+            <div class="widget hide-for-small">
+                <h3>二维码 / QR Code</h3>
+                <div class="qrcode center">
+                    <p><img class="radius" src="/static/qr.png" alt="qr code"></p>
+                    <p>支持手机访问. Mobile Valid</p>
+                </div>
+            </div>
+            <div class="widget">
+                <h3>城市足迹 / Cities</h3>
+                <div class="tags">
+                   <ul>
+                       {% assign categories_list = site.categories %}
+                       {% include function/category_list %}
+                   </ul>
+                </div>
+            </div>
+            <div class="widget">
+                <h3>标签 / Tags</h3>
+                <div class="tags">
+                    {% assign tags_list = site.tags %}
+                    {% include function/tag_list %}
+                </div>
+            </div>
+        </aside>
+    </main>
+    <footer id="footer">
+        <p><a href="{{site.url}}">Willin Now</a> &copy; {% assign first_post = site.posts | last %}{{ first_post.date | date: "%Y" }} - {{ site.time | date: "%Y" }} All Rights Reserved. Theme by <a href="http://willin.wang">Willin Wang</a>. Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>.</p>
+        <p><small>Licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="Creative Commons 署名-非商业性使用 4.0" rel="license">CC BY-NC 4.0</a></small></p>
+    </footer>
+    <div class="hide">
+        <img src="/static/bg.jpg" id="bgb">
+    </div>
+</div><!--End Wrapper-->
+<canvas id="canvas"></canvas>
+<div id="loading"></div>
+</body>
+</html>

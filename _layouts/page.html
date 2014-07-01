@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+
+
+<ul class="timeline">
+    <li class="post">
+        <div class="meta">
+            <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
+                {{ page.date | date: "%Y-%m-%d" }}
+            </time>
+            <address>{% for cat in page.categories %}{{ cat }}{% endfor %}</address>
+        </div>
+        <div class="device desktop"></div>
+        <div class="mrright">
+            <article>
+                <cite><span class="hide">与你相距 <span class="geolocation" data-lat="{{page.lat}}" data-lng="{{page.lng}}">??</span>. </span>{{ page.address }}</cite>
+                <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+                <section>
+                    <img src="{{site.map_provider}}{{page.lng}},{{page.lat}}&markers={{page.lng}},{{page.lat}}">
+                    {{ content }}
+                </section>
+                <section class="meta">
+                    {% if page.categories.size != 0 %}  城市:  {% for cat in page.categories %}<a href="/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>&nbsp;  {% endfor %} {% endif %}{% if page.tags.size != 0 %},  标签:  {% for tag in page.tags %}  <a href="/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>&nbsp;  {% endfor %} {% endif %}
+
+                </section>
+            </article>
+        </div>
+    </li>
+</ul>
