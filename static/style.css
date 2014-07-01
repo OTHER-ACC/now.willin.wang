@@ -660,11 +660,11 @@ article h2 a:hover,article section a,article .meta span{
 
 }
 .timeline > li.post .mrright{
-    perspective: 0px;
-    -webkit-perspective: 0px;
-    -moz-perspective: 0px;
-    -o-perspective: 0;
-    -ms-perspective: 0px;
+    perspective: none;
+    -webkit-perspective: none;
+    -moz-perspective: none;
+    -o-perspective: none;
+    -ms-perspective: none;
 }
 .timeline > li.current .mrright{
     margin:0px 0 15px 0;
