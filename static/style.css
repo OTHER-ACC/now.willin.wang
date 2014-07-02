@@ -21,7 +21,9 @@
     font-style: normal;
 
 }
-
+#forkme{
+    position: fixed; top: 0; right: 0; border: 0;z-index: 999;
+}
 .hide{
     display: none;
 }
@@ -792,6 +794,9 @@ article h2 a:hover,article section a,article .meta span{
 }
 
 @media screen and (max-width: 47.2em) {
+    #forkme{
+        display: none;
+    }
     .timeline:before{
         left:auto;
         right:45px;
