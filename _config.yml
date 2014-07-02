@@ -7,7 +7,7 @@ baseurl: ""
 url: "http://now.willin.wang"
 exclude: [README.md, Rakefile, node_modules, Procfile]
 
-duoshuo: willinnow
+duoshuo: willog
 qq: 2539929
 email: willin@willin.org
 
