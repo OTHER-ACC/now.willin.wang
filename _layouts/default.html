@@ -9,18 +9,19 @@
     <meta name="description" content="{{site.description}}">
     <meta name="keywords" content="{% if page.categories.size != 0 %}{% for cat in page.categories %}{{ cat }},{% endfor %}{% endif %}{% if page.tags.size != 0 %}{% for tag in page.tags %}{{ tag }},{% endfor %}{% endif %}{{site.keywords}}">
 
-    <script type="text/javascript">
-        var _speedMark = new Date(),base_url="{{ site.url }}/",site_title = "{{ site.title }}",duoshuoQuery = {short_name:"{{ site.duoshuo }}"};
-    </script>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="shortcut icon" href="http://willin.wang/favicon.ico">
     <link rel="apple-touch-icon" href="http://willin.wang/touch-icon-iphone-precomposed.png">
     <link rel="apple-touch-icon" sizes="76x76"   href="http://willin.wang/touch-icon-ipad-precomposed.png">
     <link rel="apple-touch-icon" sizes="120x120" href="http://willin.wang/touch-icon-iphone-retina-precomposed.png">
     <link rel="apple-touch-icon" sizes="152x152" href="http://willin.wang/touch-icon-ipad-retina-precomposed.png">
-    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=35280207" charset="UTF-8"></script>
     <script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var _speedMark = new Date(),base_url="{{ site.url }}/",site_title = "{{ site.title }}",duoshuoQuery = {short_name:"{{ site.duoshuo }}"};
+        window.jQuery || document.write(unescape('%3Cscript src="http://code.jquery.com/jquery-1.11.1.min.js"%3E%3C/script%3E'))
+    </script>
     <script type="application/x-javascript" src="/static/default.js"></script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=35280207" charset="UTF-8"></script>
 
 </head>
 <body>
