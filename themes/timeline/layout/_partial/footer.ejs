@@ -1,0 +1,5 @@
+<footer id="footer">
+    <p><a href="<%-site.url%>">Willin Now</a> &copy;  <% current = date(Date.now(), "YYYY") %><% if (theme.since && theme.since != current){ %> <%- theme.since %> - <% } %>
+        <%- current %> All Rights Reserved. </p>
+    <p><small>Licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="Creative Commons 署名-非商业性使用 4.0" rel="license">CC BY-NC 4.0</a></small></p>
+</footer>

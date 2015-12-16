@@ -1,0 +1,18 @@
+<aside id="sidebar">
+    <% if (site.categories.length){ %>
+    <div class="widget">
+        <h3>城市足迹 / Cities</h3>
+        <div class="tags">
+            <%- list_categories({show_count: 1}) %>
+        </div>
+    </div>
+    <% } %>
+    <% if (site.tags.length){ %>
+    <div class="widget">
+        <h3>标签 / Tags</h3>
+        <div class="tags">
+            <%- list_tags({show_count: 1}) %>
+        </div>
+    </div>
+    <% } %>
+</aside>

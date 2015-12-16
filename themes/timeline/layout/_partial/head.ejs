@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <%
+    var title = page.title;
+
+    if (is_archive()){
+        title = 'Memories';
+
+        if (is_month()){
+            title += ': ' + page.year + '/' + page.month;
+        } else if (is_year()){
+            title += ': ' + page.year;
+        }
+    } else if (is_category()){
+        title = 'City: ' + page.category;
+    } else if (is_tag()){
+        title = 'Tag: ' + page.tag;
+    }
+    %>
+    <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <% if (theme.rss){ %>
+    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+    <% } %>
+    <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- theme.favicon %>">
+    <link rel="shortcut icon" href="http://willin.wang/favicon.ico">
+    <link rel="apple-touch-icon" href="http://willin.wang/touch-icon-iphone-precomposed.png">
+    <link rel="apple-touch-icon" sizes="76x76"   href="http://willin.wang/touch-icon-ipad-precomposed.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://willin.wang/touch-icon-iphone-retina-precomposed.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://willin.wang/touch-icon-ipad-retina-precomposed.png">
+    <% } %>
+    <%- css('assets/style') %>
+    <%- js('assets/jquery.min') %>
+</head>

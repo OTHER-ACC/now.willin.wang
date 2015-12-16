@@ -1,0 +1,46 @@
+<li <% if(!index){ %>class="post"
+        <% } %>
+>
+    <div class="meta">
+        <time datetime="<%= date(post.date) %>">
+            <%= date(post.date) %>
+        </time>
+        <address><%- list_categories(post.categories, {
+                show_count: false,
+                style: 'none'
+            }) %></address>
+    </div>
+    <div class="device desktop"></div>
+    <div class="mrright">
+        <article>
+            <cite><span class="hide">与你相距 <span class="geolocation" data-lat="<%= post.lat %>"
+                                                data-lng="<%= post.lng %>">??</span>. </span><%= post.address %></cite>
+            <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+            <section>
+                <time datetime="<%= date(post.date) %>">
+                    日期: <%= date(post.date) %>
+                </time>
+
+                <img src="<%= config.map_provider %> <%= post.lng %>,<%= post.lat %>&markers=<%= post.lng %>,<%= post.lat %>">
+                <% if (post.excerpt && index){ %>
+                <%- post.excerpt %>
+                <p class="article-more-link">
+                    <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+                </p>
+                <% } else { %>
+                <%- post.content %>
+                <% } %>
+            </section>
+            <section class="meta">
+                城市: <%- list_categories(post.categories, {
+                    show_count: false,
+                    style: 'none'
+                }) %>
+                , 标签: <%- list_tags(post.tags, {
+                    show_count: false,
+                    style: 'none'
+                }) %>
+            </section>
+        </article>
+    </div>
+</li>

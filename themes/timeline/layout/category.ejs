@@ -1,0 +1,32 @@
+<%- partial('_partial/head') %>
+<body>
+<div id="container">
+    <div class="wrapper">
+        <%- partial('_partial/header') %>
+    </div>
+    <div class="wrapper">
+        <div id="main">
+            <div id="content">
+                <ul class="timeline">
+                    <%- partial('_partial/archive') %>
+                </ul>
+                <% if (page.total > 1){ %>
+                <nav class="navigation" data-index="2" data-total="<%= page.total %>">
+                    <noscript><%- paginator({show_all: true, prev_next: false}) %></noscript>
+                    <div class="hide"><%- paginator({show_all: true, prev_next: false}) %></div>
+                </nav>
+                <% } %>
+            </div>
+            <%- partial('_partial/sidebar') %>
+        </div>
+    </div>
+    <div id="others">
+        <img src="/assets/images/bg.jpg" id="bgb">
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=BZcPDiZ8h5kiSSGrE8T5EvkR"></script>
+        <%- js('assets/main') %>
+    </div>
+    <%- partial('_partial/footer') %>
+</div>
+<div id="loading"></div>
+</body>
+</html>
