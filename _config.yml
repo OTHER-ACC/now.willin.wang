@@ -76,5 +76,5 @@ deploy:
   repo: git@github.com:willin/now.willin.wang.git
   branch: gh-pages
 - type: git
-  repo: git@gitcafe.com:willin/now.willin.wang.git
+  repo: git@gitcafe.com:willin/now.git
   branch: gitcafe-pages
